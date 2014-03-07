@@ -5,20 +5,23 @@ lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's', 'l']
 #CODE TO PASTE
 ############################
 
-def isWordGuessed(secretWord, lettersGuessed):
+def getGuessedWord(secretWord, lettersGuessed):
+
 	counter = 0
+	strDisplayWord = ''
+
 	for letter in secretWord:
 
 		if letter in lettersGuessed:
-			counter += 1
 
-	if counter == len(secretWord):
-		return True
-	else:
-		return False
+			strDisplayWord += letter
+		else:
+			strDisplayWord += '_ '
+
+	return strDisplayWord
 
 ############################
 #OUTPUT
 ############################
 
-print isWordGuessed(secretWord,lettersGuessed)
+print getGuessedWord(secretWord,lettersGuessed)
