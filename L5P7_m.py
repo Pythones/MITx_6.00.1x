@@ -7,7 +7,11 @@ def lenRecur(aStr):
 
     #start grader
 
-	return 1 + lenRecur (aStr[1:]) #hard to imagine that 'return 1 +' will work
+    if aStr != "":
+    	return 0
+
+    else:
+    	return 1 + lenRecur (aStr[1:]) #hard to imagine that 'return 1 +' will work
 
     return
 
