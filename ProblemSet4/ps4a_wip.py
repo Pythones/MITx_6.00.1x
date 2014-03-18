@@ -266,7 +266,8 @@ def playHand(hand, wordList, n):
     while calculateHandlen(hand) > 0:
     
         # Display the hand
-        print 'Current Hand: ' + displayHand(hand)
+        print 'Current Hand: ',
+        displayHand(hand)
 
         # Ask user for input
         strUser = raw_input('Enter word, or a "." to indicate that you are finished: ')
@@ -294,7 +295,7 @@ def playHand(hand, wordList, n):
                 print '"' + strUser + '" ' + 'earned '+ str(int1) + ' points. Total: '+ str(totalScore) 
                 print '\n'
                 # Update the hand 
-                updateHand(hand,strUser)
+                hand = updateHand(hand,strUser)
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
     #GOOOOOOOL!!!!
