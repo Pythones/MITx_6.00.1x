@@ -35,11 +35,13 @@ def updateHand(hand, word):
     """
 
     #start grader
+    hand2 = hand.copy()
+
     #repasa todas las letras de word y las comparas con los values de hand
     for char in word:
     	if hand.get (char, 0) != 0:  #si hay alguna igual, le restas 1 al value
-    		hand[char] -= 1
-    return hand  #devuelves hand revisado... pero ojo no se debe borrar el original (ESTO FALLA)
+    		hand2[char] -= 1
+    return hand2  #devuelves hand revisado... pero ojo no se debe borrar el original (ESTO FALLA)
 
     #end grader
 

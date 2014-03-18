@@ -31,12 +31,13 @@ def isValidWord(word, hand, wordList):
     """
 
     #start grader
+    hand2 = hand.copy()
 
     #First test, is word made from hand?
     for char in word:
-    	if hand.get (char, 0) != 0:  #si hay alguna igual, le restas 1 al value
-    		hand[char] -= 1 #BUG! Re-testing last test to see if you mutate the original hand
-    	elif hand.get (char, 0) == 0:  #si no hay igual mata
+    	if hand2.get (char, 0) != 0:  #si hay alguna igual, le restas 1 al value
+    		hand2[char] -= 1
+    	elif hand2.get (char, 0) == 0:  #si no hay igual mata
     		return False
 
     #Second test, is word in wordlist?
@@ -51,5 +52,5 @@ def isValidWord(word, hand, wordList):
 if __name__ == '__main__':
     wordList = loadWords()
 #comprobamos nuestro codigo fresco del dia
-hand = {'w':1,'d':1, 'e':1, 'm':1, 'u':1, 'i':1}
+hand = {'w':1,'d':1, 'e':2, 'm':1, 'u':1, 'i':1}
 print isValidWord('weed', hand, wordList)
