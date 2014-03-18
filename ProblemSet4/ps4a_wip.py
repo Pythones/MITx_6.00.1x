@@ -116,7 +116,8 @@ def displayHand(hand):
     """
     for letter in hand.keys():
         for j in range(hand[letter]):
-             print letter,              # print all on the same line
+
+            print letter,              # print all on the same line
     print                               # print an empty line
 
 #
@@ -265,7 +266,7 @@ def playHand(hand, wordList, n):
     while calculateHandlen(hand) > 0:
     
         # Display the hand
-        displayHand(hand)
+        print 'Current Hand: ' + displayHand(hand)
 
         # Ask user for input
         strUser = raw_input('Enter word, or a "." to indicate that you are finished: ')
@@ -291,6 +292,7 @@ def playHand(hand, wordList, n):
                 int1 = getWordScore(strUser,n)
                 totalScore += int1
                 print '"' + strUser + '" ' + 'earned '+ str(int1) + ' points. Total: '+ str(totalScore) 
+                print '\n'
                 # Update the hand 
                 updateHand(hand,strUser)
 
