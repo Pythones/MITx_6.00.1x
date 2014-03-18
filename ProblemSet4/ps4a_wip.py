@@ -316,9 +316,18 @@ def playGame(wordList):
  
     2) When done playing the hand, repeat from step 1    
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    print "playGame not yet implemented." # <-- Remove this line when you code the function
-   
+    check = True
+
+    while check:
+        userInput = raw_input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ') # <-- Remove this line when you code the function
+       
+        if userInput == "n":
+            playHand(hand, wordList, n)
+            strLastHand = hand
+        elif userInput == "r":
+            playHand(strLastHand, wordList, n)
+        elif userInput == 'e':
+            check = False
 
 
 
@@ -332,4 +341,5 @@ if __name__ == '__main__':
 
 #comprobamos nuestro codigo fresco del dia
 hand = {'w':1,'d':1, 'e':2, 'm':1, 'u':1, 'i':1}
-playHand(hand,wordList,7)
+n= 7
+playGame(wordList)
