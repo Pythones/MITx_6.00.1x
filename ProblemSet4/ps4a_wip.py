@@ -295,7 +295,7 @@ def playHand(hand, wordList, n):
                 updateHand(hand,strUser)
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
-
+    #GOOOOOOOL!!!!
     print 'Run out of letters. Total score: '+ str(totalScore) + ' points.'
 #
 # Problem #5: Playing a game
