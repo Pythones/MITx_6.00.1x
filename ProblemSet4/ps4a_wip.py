@@ -262,10 +262,13 @@ def playHand(hand, wordList, n):
     # Keep track of the total score
     
     # As long as there are still letters left in the hand:
+    if calculateHandlen(hand) > 0:
     
         # Display the hand
-        
+        displayHand(hand)
+
         # Ask user for input
+        
         
         # If the input is a single period:
         
