@@ -260,37 +260,43 @@ def playHand(hand, wordList, n):
     """
     # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
     # Keep track of the total score
-    
+    totalScore = 0
     # As long as there are still letters left in the hand:
-    if calculateHandlen(hand) > 0:
+    while calculateHandlen(hand) > 0:
     
         # Display the hand
         displayHand(hand)
 
         # Ask user for input
-        
+        strUser = raw_input('Enter word, or a "." to indicate that you are finished: ')
         
         # If the input is a single period:
-        
-            # End the game (break out of the loop)
+        if strUser == '.':
 
+            # End the game (break out of the loop)
+            break
             
         # Otherwise (the input is not a single period):
-        
+        else:
+
             # If the word is not valid:
-            
+            if not isValidWord(strUser, hand, wordList):
+
                 # Reject invalid word (print a message followed by a blank line)
-
+                print 'Invalid word, please try again.'
+                print '\n'
             # Otherwise (the word is valid):
-
+            else:
                 # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
-                
+                int1 = getWordScore(strUser,n)
+                totalScore += int1
+                print '"' + strUser + '" ' + 'earned '+ str(int1) + ' points. Total: '+ str(totalScore) 
                 # Update the hand 
-                
+                updateHand(hand,strUser)
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
 
-
+    print 'Run out of letters. Total score: '+ str(totalScore) + ' points.'
 #
 # Problem #5: Playing a game
 # 
@@ -318,4 +324,9 @@ def playGame(wordList):
 #
 if __name__ == '__main__':
     wordList = loadWords()
-    playGame(wordList)
+    #playGame(wordList)
+
+
+#comprobamos nuestro codigo fresco del dia
+hand = {'w':1,'d':1, 'e':2, 'm':1, 'u':1, 'i':1}
+playHand(hand,wordList,7)
