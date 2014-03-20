@@ -41,8 +41,11 @@ def compChooseWord(hand, wordList, n):
         letterCounter = 0 #
 
         for letter in word:
-            if letter in lstLetters:    
-                letterCounter += 1
+            if len(word) == handLength:
+                
+            else:
+
+                
 
         if letterCounter == len(word):
             scoreWord = getWordScore(word)
