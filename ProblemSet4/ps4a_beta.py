@@ -7,6 +7,7 @@
 
 import random
 import string
+import GetBestWord as bw
 
 VOWELS = 'aeiou'
 CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
@@ -342,4 +343,5 @@ if __name__ == '__main__':
 #comprobamos nuestro codigo fresco del dia
 hand = {'w':1,'d':1, 'e':2, 'm':1, 'u':1, 'i':1}
 n= 7
-playGame(wordList)
+
+print bw.GetBestWord(wordList,n)

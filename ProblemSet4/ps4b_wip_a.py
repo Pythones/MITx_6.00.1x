@@ -42,7 +42,7 @@ def compChooseWord(hand, wordList, n):
 
     lstLetters = hand.values()
 
-    handLength = len(lstLetters) #Longitud de la palabra igual a la longitud máxima de búsqueda
+    handLength = sum(lstLetters) #Longitud de la palabra igual a la longitud máxima de búsqueda
 
     filteredList = []
 
@@ -56,10 +56,9 @@ def compChooseWord(hand, wordList, n):
                 filteredList.append(word)
                 
         if len(filteredList) == 0: handLength -= 1
-            handLength -= 1
 
-    if len(filteredList) == 0: return None
-
+    if len(filteredList) == 0: 
+        return None
 
         if letterCounter == len(word):
             scoreWord = getWordScore(word)
@@ -149,4 +148,5 @@ if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
 
-
+hand = {'w':1,'d':1, 'e':2, 'm':1, 'u':1, 'i':1}
+n= 7
