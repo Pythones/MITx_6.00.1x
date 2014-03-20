@@ -1,7 +1,7 @@
 from ps4a import *
 import time
 
-def AreLettersinHand(hand,word):
+def AreLettersInHand(hand,word):
     letterCounter = 0
     
     for letter in hand:
@@ -9,7 +9,6 @@ def AreLettersinHand(hand,word):
             letterCounter += 1
     if letterCounter == len(hand):
         return True
-
 
 #
 #
@@ -56,10 +55,10 @@ def compChooseWord(hand, wordList, n):
             if len(word) == handLength:
                 filteredList.append(word)
                 
-        if filteredList == None:
+        if len(filteredList) == 0: handLength -= 1
             handLength -= 1
 
-
+    if len(filteredList) == 0: return None
 
 
         if letterCounter == len(word):
