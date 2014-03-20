@@ -1,6 +1,15 @@
 from ps4a import *
 import time
 
+def AreLettersinHand(hand,word):
+    letterCounter = 0
+    
+    for letter in hand:
+        if letter in word:
+            letterCounter += 1
+    if letterCounter == len(hand):
+        return True
+
 
 #
 #
@@ -36,16 +45,22 @@ def compChooseWord(hand, wordList, n):
 
     handLength = len(lstLetters) #Longitud de la palabra igual a la longitud máxima de búsqueda
 
+    filteredList = []
+
     # For each word in the wordList
-    for word in wordList: #For each word in the global wordlist...
-        letterCounter = 0 #
+    while handLength > 0:
 
-        for letter in word:
+        for word in wordList: #For each word in the global wordlist...
+            letterCounter = 0 #
+            
             if len(word) == handLength:
+                filteredList.append(word)
                 
-            else:
+        if filteredList == None:
+            handLength -= 1
 
-                
+
+
 
         if letterCounter == len(word):
             scoreWord = getWordScore(word)
