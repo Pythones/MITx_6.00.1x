@@ -1,24 +1,8 @@
-animals = { 'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati']}
+class Clock(object):
+    def __init__(self, time):
+	self.time = time
+    def print_time(self, time):
+	print time
 
-animals['d'] = ['donkey']
-animals['d'].append('dog')
-animals['d'].append('dingo')
-
-def biggest(aDict):
-    '''
-    aDict: A dictionary, where all the values are lists.
-
-    returns: int, how many values are in the dictionary.
-    '''
-
-    #Setting variables
-    Count = 0
-
-    #Setting function body
-    for key in aDict.values():
-    	for palabra in key:
-    		Count += 1
-
-    return Count
-
-print biggest(animals)
+clock = Clock('5:30')
+clock.print_time('10:30')

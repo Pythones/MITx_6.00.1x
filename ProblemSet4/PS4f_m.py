@@ -185,8 +185,6 @@ def updateHand(hand, word):
     #end grader
 
 
-
-
 # Problem #3: Test word validity
 
 def isValidWord(word, hand, wordList):
