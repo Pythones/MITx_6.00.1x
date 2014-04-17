@@ -1,15 +1,6 @@
 from ps4a import *
 import time
 
-def AreLettersInHand(hand,word):
-    letterCounter = 0
-    
-    for letter in hand:
-        if letter in word:
-            letterCounter += 1
-    if letterCounter == len(hand):
-        return True
-
 #
 #
 # Problem #6: Computer chooses a word
@@ -35,39 +26,25 @@ def compChooseWord(hand, wordList, n):
     # Create a new variable to store the maximum score seen so far (initially 0)
 
     dblMaxScore = 0
-
+    dblScore = 0
     # Create a new variable to store the best word seen so far (initially None)
 
     strBestWord = ''
 
-    lstLetters = hand.values()
+    for word in wordList:
 
-    handLength = sum(lstLetters) #Longitud de la palabra igual a la longitud máxima de búsqueda
+        if isValidWord(word,hand,wordList):
+            dblScore = getWordScore(word,n)
 
-    filteredList = []
+            if dblScore > dblMaxScore:
 
-    # For each word in the wordList
-    while handLength > 0:
-
-        for word in wordList: #For each word in the global wordlist...
-            letterCounter = 0 #
-            
-            if len(word) == handLength:
-                filteredList.append(word)
-                
-        if len(filteredList) == 0: handLength -= 1
-
-    if len(filteredList) == 0: 
-        return None
-
-        if letterCounter == len(word):
-            scoreWord = getWordScore(word)
-            if scoreWord > dblMaxScore:
-                dblMaxScore = scoreWord
+                dblMaxScore = dblScore
                 strBestWord = word
 
-
-
+    if strBestWord == "":
+        return None
+    else:
+        return strBestWord
 
 
 
@@ -107,7 +84,17 @@ def compPlayHand(hand, wordList, n):
     wordList: list (string)
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    intScore = 0
+    print 'Current hand: ',
+    print str(displayHand(hand))
+
+    playedWord = compChooseWord(hand, wordList,n)
+
+    while playedWord != None:
+        intScore = intScore + 
+
+
+
     
 #
 # Problem #8: Playing a game
